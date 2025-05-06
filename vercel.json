@@ -2,8 +2,12 @@
   "version": 2,
   "builds": [
     {
-      "src": "vite.config.ts",
-      "use": "@vercel/vite"
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "buildCommand": "npm run build:client",
+        "outputDirectory": "dist/public"
+      }
     },
     {
       "src": "server/index.ts",
